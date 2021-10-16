@@ -1,0 +1,89 @@
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * MODIFIER CLASSES
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * #header............The main page header.
+ * #footer............The main page footer.
+ * buttons..............Button elements.
+ *
+ * SECTIONS
+ *
+ */
+
+
+
+
+
+ /*------------------------------------*\
+  GENERIC
+\*------------------------------------*/
+
+@font-face {
+    font-family: 'aileronbold';
+    src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileronbold';
+    src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileronbold';
+    src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*------------------------------------*\
+  GENERIC
+\*------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+/*------------------------------------*\
+  BASE
+\*------------------------------------*/
+
+body {
+  font-family: aileronbold, 'Sans Serif';
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/*------------------------------------*\
+  OBJECTS
+\*------------------------------------*/
+
+.section-wrapper {
+  max-width: 60rem;
+}
