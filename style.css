@@ -1,0 +1,137 @@
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * MODIFIER CLASSES
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * #header............The main page header.
+ * #footer............The main page footer.
+ * buttons..............Button elements.
+ *
+ * SECTIONS
+ *
+ */
+
+
+
+
+
+ /*------------------------------------*\
+  GENERIC
+\*------------------------------------*/
+
+@font-face {
+    font-family: 'aileronbold';
+    src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileronbold';
+    src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileronbold';
+    src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*------------------------------------*\
+  GENERIC
+\*------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+/*------------------------------------*\
+  BASE
+\*------------------------------------*/
+
+body {
+  font-family: aileronbold, 'Sans Serif';
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+#nav {
+  background-color: #000;
+  height: 90px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  width: 50px;
+  /* height: 50px; */
+}
+
+.nav-logo__img {
+  max-width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-list__link {
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color:#fff;
+  text-transform: uppercase;
+}
+
+button.nav-toggle {
+  display: none;
+}
+
+
+
+
+/*------------------------------------*\
+  OBJECTS
+\*------------------------------------*/
+
+.section-wrapper {
+  max-width: 60rem;
+}
