@@ -5,35 +5,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>The Agency</title>
+  <title>The Focus Agency</title>
 </head>
 <body>
 
-    <!-- Navigation -->
-  <header id="header">
-    <nav id="nav">
+  <!-- Navigation -->
+  <header id="header-main">
+    <nav class="navbar center">
 
-      <div class="nav-container section-wrapper">
+      <div class="brand-title">      
 
-        <div class="nav-logo"><img src="assets/img/logo.png" alt="The logo of our agency" class='nav-logo__img'></div>
+        <div class="brand-logo"><img src="assets/img/logo.png" alt="The logo of the Focus agency" class='brand-logo__img'></div>
 
-        <button class="nav-toggle"></button>
+        <span class='brand-name'>Focus</span>  
+        
+      </div>
 
-        <ul class="nav-list">
-          <li class="nav-list__item"><a href="#about" class="nav-list__link">About</a></li>
-          <li class="nav-list__item"><a href="#work" class="nav-list__link">Work</a></li>
-          <li class="nav-list__item"><a href="#services" class="nav-list__link">Services</a></li>
-          <li class="nav-list__item"><a href="#contact" class="nav-list__link">Contact</a></li>
+      <!-- aria-label lets disabled users know what the menu is about, aria-expanded lets them 
+        know if it is expanded or collapsed -->
+      <a href="#" class="toggle-btn" aria-label="Main Navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+
+      <div class="navbar-links">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-
       </div>
 
     </nav>
   </header>
 
+  <main>
 
 
-  
+
+
+
+
+  </main>
+
 <script src='app.js'></script>
 </body>
 </html>

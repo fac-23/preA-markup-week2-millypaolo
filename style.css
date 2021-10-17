@@ -10,17 +10,14 @@
  * BASE
  * Headings.............H1–H6 styles.
  *
- * MODIFIER CLASSES
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
  * COMPONENTS
  * #header............The main page header.
  * #footer............The main page footer.
  * buttons..............Button elements.
  *
  * SECTIONS
+ *
+ * MODIFIER CLASSES
  *
  */
 
@@ -29,7 +26,7 @@
 
 
  /*------------------------------------*\
-  GENERIC
+  SETTINGS
 \*------------------------------------*/
 
 @font-face {
@@ -54,6 +51,16 @@
 }
 
 
+/* GLOBAL VARIABLES */
+
+:root {
+
+  /* Colors */
+  --color-primary: #66C3FF;
+  --color-secondary: #363732;
+  --color-tertiary: #DCE1E9;
+
+}
 
 
 /*------------------------------------*\
@@ -85,53 +92,149 @@ body {
   #HEADER
 \*------------------------------------*/
 
-#nav {
+
+/* Mobile-first styling */
+
+#header-main {
   background-color: #000;
-  height: 90px;
 }
 
-.nav-container {
+.navbar {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: inherit;
-  margin: 0 auto;
+  align-items: flex-start;
+  color: #fff;
+  padding: 0 0.8rem;
 }
 
-.nav-logo {
-  width: 50px;
-  /* height: 50px; */
-}
-
-.nav-logo__img {
-  max-width: 100%;
-}
-
-.nav-list {
+.brand-title {
   display: flex;
-  list-style-type: none;
+  font-size: 1.5rem;
+  padding: 1rem 0;
 }
 
-.nav-list__link {
-  padding: 10px 15px;
-  margin: 0 5px;
-  cursor: pointer;
+.brand-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.brand-name {
+  padding: 6px 0 0 8px;
+}
+
+.brand-logo__img {
+  width: 100%;
+}
+
+.navbar-links {
+  width: 100%;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    list-style-type: none;
+    text-align: center;
+  }
+
+.navbar-links ul.active {
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  display: block;
+  color: #fff;
   text-decoration: none;
-  color:#fff;
-  text-transform: uppercase;
+  padding: 0.5rem 0;
+  cursor: pointer;
 }
 
-button.nav-toggle {
-  display: none;
+.navbar-links li a:hover {
+  color: var(--color-primary);
 }
+
+.toggle-btn {
+  width: 30px;
+  height: 23px;
+  position: absolute; 
+  top: 1.5rem;
+  right: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.toggle-btn.active {
+  justify-content: space-between;
+}
+
+.toggle-btn span {
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+/* Styling for devices bigger than mobile */
+
+@media (min-width: 600px) {
+
+  .toggle-btn {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar-links {
+    display: initial;
+    width: auto;
+  }
+
+  .navbar-links ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .navbar-links li a {
+    padding: 1rem;
+  }
+
+}
+
+
+
 
 
 
 
 /*------------------------------------*\
-  OBJECTS
+  MODIFIER CLASSES
 \*------------------------------------*/
 
-.section-wrapper {
+.center {
+  margin: 0 auto;
   max-width: 60rem;
 }
+
+.width-md {
+  max-width: 40rem;
+}
+
+.width-sm {
+  max-width: 20rem;
+}
+
+
