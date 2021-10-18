@@ -10,17 +10,14 @@
  * BASE
  * Headings.............H1–H6 styles.
  *
- * MODIFIER CLASSES
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
  * COMPONENTS
  * #header............The main page header.
  * #footer............The main page footer.
  * buttons..............Button elements.
  *
  * SECTIONS
+ *
+ * MODIFIER CLASSES
  *
  */
 
@@ -29,7 +26,7 @@
 
 
  /*------------------------------------*\
-  GENERIC
+  SETTINGS
 \*------------------------------------*/
 
 @font-face {
@@ -54,6 +51,16 @@
 }
 
 
+/* GLOBAL VARIABLES */
+
+:root {
+
+  /* Colors */
+  --color-primary: #66C3FF;
+  --color-secondary: #363732;
+  --color-tertiary: #DCE1E9;
+
+}
 
 
 /*------------------------------------*\
@@ -80,10 +87,159 @@ body {
 
 
 
+
 /*------------------------------------*\
-  OBJECTS
+  #HEADER
 \*------------------------------------*/
 
-.section-wrapper {
+
+/* Mobile-first styling */
+
+.header-main {
+  background-color: #000;
+}
+
+/* navigation nav element */
+.primary-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff;
+  padding: 0 0.8rem;
+}
+
+.brand {
+  display: flex;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.brand__name {
+  padding: 6px 0 0 8px;
+}
+
+.brand__img {
+  width: 40px;
+}
+
+/* container for all nav links */
+.primary-nav__links {
+  width: 100%;
+}
+
+/* navigation ul element */
+.primary-nav__list {
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    list-style-type: none;
+    text-align: center;
+  }
+
+.primary-nav__list.active {
+  display: flex;
+}
+
+/* navigation li elements */
+.primary-nav__item {
+  list-style: none;
+}
+
+/* navigation a elements */
+.primary-nav__link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.primary-nav__link:hover {
+  color: var(--color-primary);
+}
+
+.toggle-btn {
+  width: 30px;
+  height: 23px;
+  position: absolute; 
+  top: 1.5rem;
+  right: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.toggle-btn.active {
+  justify-content: space-between;
+}
+
+.toggle-btn span {
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+/* Styling for devices bigger than mobile */
+
+@media only screen and (min-width: 600px) {
+
+  .toggle-btn {
+    display: none;
+  }
+
+  .primary-nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* container for all nav links */
+  .primary-nav__links {
+    display: initial;
+    width: auto;
+  }
+
+  /* navigation ul element */
+  .primary-nav__list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  /* navigation a elements */
+  .primary-nav__link {
+    padding: 1rem;
+  }
+
+}
+
+
+
+
+
+
+
+/*------------------------------------*\
+  MODIFIER CLASSES
+\*------------------------------------*/
+
+.center {
+  margin: 0 auto;
   max-width: 60rem;
 }
+
+.width-md {
+  max-width: 40rem;
+}
+
+.width-sm {
+  max-width: 20rem;
+}
+
+
