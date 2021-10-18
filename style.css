@@ -10,17 +10,14 @@
  * BASE
  * Headings.............H1–H6 styles.
  *
- * MODIFIER CLASSES
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
  * COMPONENTS
  * #header............The main page header.
  * #footer............The main page footer.
  * buttons..............Button elements.
  *
  * SECTIONS
+ *
+ * MODIFIER CLASSES
  *
  */
 
@@ -29,61 +26,275 @@
 
 
  /*------------------------------------*\
-  GENERIC
+  SETTINGS
 \*------------------------------------*/
 
 @font-face {
-    font-family: 'aileronbold';
-    src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'aileronbold';
+  src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'aileronbold';
-    src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'aileronbold';
+  src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'aileronbold';
-    src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'aileronbold';
+  src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
+/* GLOBAL VARIABLES */
+
+:root {
+
+/* Colors */
+--color-primary: #66C3FF;
+--color-secondary: #363732;
+--color-tertiary: #DCE1E9;
+
+}
 
 
 /*------------------------------------*\
-  GENERIC
+GENERIC
 \*------------------------------------*/
 
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 
 
 
 /*------------------------------------*\
-  BASE
+BASE
 \*------------------------------------*/
 
 body {
-  font-family: aileronbold, 'Sans Serif';
-  margin: 0;
-  padding: 0;
+font-family: aileronbold, 'Sans Serif';
+margin: 0;
+padding: 0;
 }
 
 
 
 
+
 /*------------------------------------*\
-  OBJECTS
+#HEADER
 \*------------------------------------*/
 
-.section-wrapper {
-  max-width: 60rem;
+
+/* Mobile-first styling */
+
+#header-main {
+background-color: #000;
+}
+
+.navbar {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+color: #fff;
+padding: 0 0.8rem;
+}
+
+.brand-title {
+display: flex;
+font-size: 1.5rem;
+padding: 1rem 0;
+}
+
+.brand-logo {
+height: 40px;
+width: 40px;
+}
+
+.brand-name {
+padding: 6px 0 0 8px;
+}
+
+.brand-logo__img {
+width: 100%;
+}
+
+.navbar-links {
+width: 100%;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 1rem 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: center;
+}
+
+.navbar-links ul.active {
+display: flex;
+}
+
+.navbar-links li {
+list-style: none;
+}
+
+.navbar-links li a {
+display: block;
+color: #fff;
+text-decoration: none;
+padding: 0.5rem 0;
+cursor: pointer;
+}
+
+.navbar-links li a:hover {
+color: var(--color-primary);
+}
+
+.toggle-btn {
+width: 30px;
+height: 23px;
+position: absolute; 
+top: 1.5rem;
+right: 0.8rem;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+
+.toggle-btn.active {
+justify-content: space-between;
+}
+
+.toggle-btn span {
+background-color: #fff;
+height: 3px;
+width: 100%;
+border-radius: 10px;
+}
+
+
+/* Header, section text, img styling, grid CSS styling mobile first */
+h1 {
+  direction: ltr;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-size: 50px;
+  padding: 10px;
+  color: rgb(36, 26, 82);
+}
+
+.grid {
+  display: grid;
+  margin: 0 auto;
+}
+
+.about-section, .work-section, 
+.services-section, .contact-section {
+border: 5px solid dodgerblue;
+margin: 20px;
+padding: 5px;
+
+}
+
+h2, h3, h4, h5 {
+  direction: ltr;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-size: 40px;
+  padding: 10px;
+  color: rgb(85, 70, 153);
+}
+
+
+p {
+  direction: ltr;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  color:rgb(133, 35, 35);
+}
+
+#Jessica {
+  align-items: center;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#Ayo {
+  align-items: center;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Styling for devices bigger than mobile */
+
+@media (min-width: 600px) {
+
+.toggle-btn {
+  display: none;
+}
+
+.navbar {
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-links {
+  display: initial;
+  width: auto;
+}
+
+.navbar-links ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.navbar-links li a {
+  padding: 1rem;
+}
+
+}
+
+
+
+
+
+
+
+/*------------------------------------*\
+MODIFIER CLASSES
+\*------------------------------------*/
+
+.center {
+margin: 0 auto;
+max-width: 60rem;
+}
+
+.width-md {
+max-width: 40rem;
+}
+
+.width-sm {
+max-width: 20rem;
 }

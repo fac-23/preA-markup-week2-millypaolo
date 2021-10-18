@@ -5,13 +5,79 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>The Agency</title>
+  <title>The Focus Agency</title>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <header id="header-main">
+    <nav class="navbar center">
 
+      <div class="brand-title">      
 
+        <div class="brand-logo"><img src="assets/img/logo.png" alt="The logo of the Focus agency" class='brand-logo__img'></div>
+
+        <span class='brand-name'>Focus</span>  
+        
+      </div>
+
+      <!-- aria-label lets disabled users know what the menu is about, aria-expanded lets them 
+        know if it is expanded or collapsed -->
+      <a href="#" class="toggle-btn" aria-label="Main Navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+
+      <div class="navbar-links">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+     
+    </nav>
+  </header>
+
+  <main>
+
+<h1>Focus Agency</h1>
   
+<section class="grid">
+<section class="about-section" id="about">
+<h2>About</h2>
+<p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Quae magnam deserunt quibusdam laudantium consectetur corporis et vero dolorem eius! 
+  Beatae sapiente pariatur similique esse iusto repellendus omnis consequuntur repellat perferendis?</p></section>
+<section class="work-section" id="work">
+  <h3>Work</h3>
+  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Quae magnam deserunt quibusdam laudantium consectetur corporis et vero dolorem eius! 
+    Beatae sapiente pariatur similique esse iusto repellendus omnis consequuntur repellat perferendis?</p>
+</section>
+
+<section class="services-section" id="services">
+  <h4>Services</h4>
+  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Quae magnam deserunt quibusdam laudantium consectetur corporis et vero dolorem eius! 
+    Beatae sapiente pariatur similique esse iusto repellendus omnis consequuntur repellat perferendis?</p>
+</section>
+
+<section class="contact-section" id="contact">
+  <h5>Contact</h5>
+  <p class="text">We are Jessica and Ayo, the dynamic duo of Focus Agency! 
+    Contact us on the form below, get in touch and see how we can help you start your dreams!</p>
+  <img src="Jessica.jpg" alt="Contact Jessica" id="Jessica">
+  <p>Hi, I'm Jessica! I'm the Recruitment Manager for Focus Agency</p>
+  <img src="Ayo.jpg" alt="Contact Ayo" id="Ayo">
+  <p>Hi, I'm Ayo! I'm the Creative Director of Focus Agency</p>
+</section>
+</section>
+
+  </main>
+
 <script src='app.js'></script>
 </body>
 </html>
