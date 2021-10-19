@@ -47,10 +47,10 @@
     <!--HERO SECTION-->
     <section class="section hero-section">
 
-      <div class="center">
+      <div class="center stack-md">
 
         <h1 class='hero-section__heading'>
-          <span class='hero-section__title'>We are Focus Agency</span><br>
+          <span class='hero-section__title'>We Are Focus Agency</span>
           <span class='hero-section__sub-title'>The Website Agency you need </span>
         </h1>
 
@@ -64,7 +64,7 @@
     <!--WORK SECTION-->
     <section class="section work-section" id="work">
 
-      <div class="center">
+      <div class="center stack-md">
       
         <h2>Work</h2>
         <p class="text">Some of our clients include... Rankin Forbes Hunger Dazed and Confused Empire GQ Vogue Mojo NME</p>
@@ -77,7 +77,7 @@
     <!--SERVICES SECTION-->
     <section class="section services-section" id="services">
 
-      <div class="center">
+      <div class="center stack-md">
       
         <h2>Services</h2>
         <p class="text">Creative Planning, Advertising, Creative Events, Research, Sales Promotion, Design, Photography, Coordination</p>
@@ -90,7 +90,7 @@
     <!--ABOUT SECTION-->
     <section class="section about-section" id="about">
   
-      <div class="center">
+      <div class="center stack-md">
       
         <h2>About</h2>
 
@@ -102,14 +102,14 @@
 
         <div class="team">
 
-          <figure class="team__member">
-            <img src="assets/img/Jessica2.jpg" alt="Contact Jessica" class="team__member--img">
-            <figcaption class='team__member--bio'>Hi, I'm Jessica! I'm the Recruitment Manager for Focus Agency</figcaption>
+          <figure class="member">
+            <img src="assets/img/Jessica2.jpg" alt="Contact Jessica" class="member__img">
+            <figcaption class='member__bio'>Hi, I'm Jessica! I'm the Recruitment Manager for Focus Agency</figcaption>
           </figure>  
 
-          <figure class="team__member">
-            <img src="assets/img/Ayo2.jpg" alt="Contact Ayo" class="team__member--img">
-            <figcaption class='team__member--bio'>Hi, I'm Ayo! I'm the Creative Director of Focus Agency</figcaption>
+          <figure class="member">
+            <img src="assets/img/Ayo2.jpg" alt="Contact Ayo" class="member__img">
+            <figcaption class='member__bio'>Hi, I'm Ayo! I'm the Creative Director of Focus Agency</figcaption>
           </figure>
 
         </div>
@@ -122,9 +122,46 @@
     <!--CONTACT SECTION-->
     <section class="section contact-section" id="contact">
 
-      <div class="center">
+      <div class="center stack-md">
       
-        <h2>Contact</h2>
+        <h2>Get in touch!</h2>
+
+        <p>Give us a call or drop your details down below and we will get in touch to discuss your project.</p> 
+
+        <form action="" method='GET' class='form center width-md'>
+
+          <div class='form__field form__name'>
+            <div class='form__name--first'>
+              <label for="firstname" class='form__label'>First Name *</label><br>
+              <span id="first-name-error" hidden>Enter your first name</span>
+              <input type="text" name='name' id='name' class='form__input'  aria-describedby="first-name-error" required>
+            </div>
+
+            <div class='form__name--last'>
+              <label for="lastname" class='form__label'>Last Name *</label><br>
+              <span id="last-name-error" hidden>Enter your last name</span>
+              <input type="text" name='lastname' id='lastname' class='form__input'  aria-describedby="last-name-error" required>
+            </div>
+          </div>
+          
+          <div class='form__field'>
+
+          </div>
+
+          <div class='form__field'>
+            <label for="email" class='form__label'>Email Address *</label><br>
+            <span id="email-error" hidden>Enter your email</span>
+            <input type="email" name='email' id='email' class='form__input' aria-describedby="email-error" required>
+          </div>
+
+          <div class='form__field'>
+            <label for="company" class='form__label'>Company Name</label><br>
+            <input type="text" name='company' id='company' class='form__input' required>
+          </div>
+
+          <input type="submit" value='Submit form' class='btn form__btn'>
+
+        </form>
 
       </div>
 
@@ -136,9 +173,9 @@
   <!--FOOTER-->
   <footer class='section footer-section'>
 
-    <div class="center">
+    <div class="center stack-md">
     
-      <p>copyright</p>
+      <p>© 2021 The Focus Agency</p>
 
     </div>
 
