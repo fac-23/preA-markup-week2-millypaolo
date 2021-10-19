@@ -62,13 +62,15 @@
 
   /* sections backgrounds */
   --section-hero-bkg: rgba(248, 213, 243, 0.534);
-  --section-work-bkg: rgba(248, 213, 243, 0.534);
-  --section-services-bkg: rgba(248, 213, 243, 0.534);
-  --section-about-bkg: rgba(248, 213, 243, 0.534);
-  --section-contact-bkg: rgba(248, 213, 243, 0.534);
+  --section-work-bkg: #F8D5F3;
+  --section-services-bkg: #F8D5F3;
+  --section-about-bkg: #F8D5F3;
+  --section-contact-bkg:  rgb(41, 40, 41);
 
   /* font colors */
-  --color-heading-secondary: rgb(85, 70, 153);
+  --color-paragraph: #333;
+  --color-heading-primary: rgb(36, 26, 82);
+  --color-heading-secondary: rgb(36, 26, 82);
 
   /* buttons text */
   --color-btn-text: rgba(248, 213, 243, 0.534);
@@ -81,6 +83,8 @@ GENERIC
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -93,53 +97,43 @@ BASE
 body {
   font-family: aileronbold, 'Sans Serif';
   text-align: left;
-  margin: 0;
-  padding: 0;
+}
+
+h1, h2, p {
+  display: block;
+  direction: ltr;
+  text-align: center;
+  padding: 10px;
+  color: var(--color-heading-primary);
 }
 
 h1 {
-  direction: ltr;
-  text-align: center;
-  margin: 0 auto;
-  display: block;
-  /* font-size: 50px; */
-  padding: 10px;
-  color: rgb(36, 26, 82);
+  font-size: 3rem;
+  color: #fff;
 }
 
 h2 {
-  direction: ltr;
-  text-align: center;
-  /* margin: 0 auto; */
-  margin: 0 auto 2rem auto;
-  display: block;
-  font-size: 40px;
-  padding: 10px;
-  color: var(--color-heading-secondary);
+  font-size: 2rem;
 }
 
 
 p {
-  direction: ltr;
-  /* text-align: center; */
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  padding: 10px;
-  font-size: 20px;
-  color:rgb(133, 35, 35);
+  font-size: 1.2rem;
+  color:var(--color-paragraph);
+  text-align: left;
 }
 
 .section {
-  padding: 6rem 1rem;
-  margin-bottom: 5rem;
+  padding: 3rem 1rem;
 }
 
 .btn {
   width: 180px;
   padding: 1.5rem 2rem;
+  border: none;
   border-radius: 5px;
   text-transform: uppercase;
-  background-color:rgba(248, 213, 243, 0.534);
+  background-color: #F8D5F3;
   cursor: pointer;
   text-decoration: none;
   color: var(--color-heading-secondary);
@@ -147,13 +141,24 @@ p {
 }
 
 .btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
-/* .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-} */
+@media only screen and (min-width: 600px) {
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem
+  }
+
+  .section {
+    padding: 6rem 1rem;
+  }
+
+}
 
 
 
@@ -165,6 +170,9 @@ p {
 /* Mobile-first styling */
 
 .header-main {
+  position: fixed;
+  width: 100%;
+  top: 0;
   background-color: #000;
 }
 
@@ -234,7 +242,8 @@ p {
 }
 
 .primary-nav__link:hover {
-  color: var(--color-tertiary);
+  text-decoration: underline;
+  color: #F8D5F3;
 }
 
 .toggle-btn {
@@ -298,18 +307,28 @@ p {
  # HERO
 \*------------------------------------*/
 
+.hero-section {
+  margin-top: 3rem;
+  background: url('assets/img/hero-img.jpg'), rgba(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+}
+
 .hero-section span {
   display: block;
 }
 
-.hero-section__title {
-  font-size: 5rem;
-}
-
 .hero-section__sub-title {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
+@media only screen and (min-width: 600px) {
+
+  .hero-section__sub-title {
+    font-size: 2rem;
+  }
+
+}
 
 
 
@@ -317,7 +336,9 @@ p {
  # WORK
 \*------------------------------------*/
 
-
+.work-section {
+  background-color: var(--section-work-bkg);
+}
 
 
 
@@ -373,16 +394,6 @@ p {
   margin-top: 1rem;
 }
 
-/* .people {
-  align-items: center;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding: 10px;
-} */
-
-
 
 
 
@@ -393,6 +404,55 @@ p {
 \*------------------------------------*/
 
 
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--section-contact-bkg);
+  color: #fff;
+}
+
+.contact-section h2, .contact-section p {
+  color: #fff;
+}
+
+form.form {
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.form__field {
+  margin-bottom: 2rem;
+}
+
+.form__label {
+  display: block;
+  padding: 0.2rem 0.2rem 0 0;
+}
+
+.form__input {
+  border: none;
+  width: 100%;
+  padding: 0.4rem 0.3rem;
+  border-radius: 2px;
+}
+
+.form__btn {
+  width: 200px;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+
+/* name and lastname group */
+.form__name {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form__name--first, .form__name--last {
+  flex-grow: 1;
+}
 
 
 
@@ -407,6 +467,10 @@ p {
   margin-bottom: 0;
 }
 
+.footer-section p {
+  text-align: center;
+}
+
 
 
 
@@ -415,8 +479,15 @@ p {
   MODIFIER CLASSES
 \*------------------------------------*/
 
+/* width modifier classes */
+
 .center {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60rem;
+}
+
+.width-lg {
   max-width: 60rem;
 }
 
@@ -426,4 +497,19 @@ p {
 
 .width-sm {
   max-width: 20rem;
+}
+
+
+/* stack modifier classes */
+
+.stack-lg > * + * {
+  margin-top: 3rem;
+}
+
+.stack-md > * + *  {
+  margin-top: 1.5rem; 
+}
+
+.stack-sm > * + *  {
+  margin-top: 0.5rem;
 }

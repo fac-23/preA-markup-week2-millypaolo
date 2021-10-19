@@ -4,7 +4,9 @@ const primaryNavLinks = document.querySelector('.primary-nav__links').firstEleme
 
 // Sandwich menu functionality on smaller devices
 
-toggleBtn.addEventListener('click', () => {
+toggleBtn.addEventListener('click', (e) => {
+
+  e.preventDefault();
 
   // expands sandwich menu when clicked
   toggleBtn.classList.toggle('active');
