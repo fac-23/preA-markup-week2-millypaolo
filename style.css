@@ -58,8 +58,20 @@
   /* Colors */
   --color-primary: #66C3FF;
   --color-secondary: #363732;
-  --color-tertiary: #DCE1E9;
+  --color-tertiary: rgba(248, 213, 243, 0.534);
 
+  /* sections backgrounds */
+  --section-hero-bkg: rgba(248, 213, 243, 0.534);
+  --section-work-bkg: rgba(248, 213, 243, 0.534);
+  --section-services-bkg: rgba(248, 213, 243, 0.534);
+  --section-about-bkg: rgba(248, 213, 243, 0.534);
+  --section-contact-bkg: rgba(248, 213, 243, 0.534);
+
+  /* font colors */
+  --color-heading-secondary: rgb(85, 70, 153);
+
+  /* buttons text */
+  --color-btn-text: rgba(248, 213, 243, 0.534);
 }
 
 
@@ -80,6 +92,7 @@ BASE
 
 body {
   font-family: aileronbold, 'Sans Serif';
+  text-align: left;
   margin: 0;
   padding: 0;
 }
@@ -89,7 +102,7 @@ h1 {
   text-align: center;
   margin: 0 auto;
   display: block;
-  font-size: 50px;
+  /* font-size: 50px; */
   padding: 10px;
   color: rgb(36, 26, 82);
 }
@@ -97,32 +110,55 @@ h1 {
 h2 {
   direction: ltr;
   text-align: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin: 0 auto 2rem auto;
   display: block;
   font-size: 40px;
   padding: 10px;
-  color: rgb(85, 70, 153);
+  color: var(--color-heading-secondary);
 }
 
 
 p {
   direction: ltr;
-  text-align: center;
+  /* text-align: center; */
   margin: 0 auto;
+  margin-bottom: 2rem;
   padding: 10px;
   font-size: 20px;
   color:rgb(133, 35, 35);
 }
 
-.grid {
+.section {
+  padding: 6rem 1rem;
+  margin-bottom: 5rem;
+}
+
+.btn {
+  width: 180px;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color:rgba(248, 213, 243, 0.534);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-heading-secondary);
+  transition: transform 0.2s linear;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
+} */
 
 
 
 /*------------------------------------*\
-#HEADER
+ # HEADER
 \*------------------------------------*/
 
 
@@ -156,6 +192,11 @@ p {
 
 .brand__img {
   width: 40px;
+}
+
+.calltoaction-btn {
+  display: block;
+  margin: 4rem auto;
 }
 
 /* container for all nav links */
@@ -193,7 +234,7 @@ p {
 }
 
 .primary-nav__link:hover {
-  color: var(--color-primary);
+  color: var(--color-tertiary);
 }
 
 .toggle-btn {
@@ -253,6 +294,45 @@ p {
 }
 
 
+/*------------------------------------*\
+ # HERO
+\*------------------------------------*/
+
+.hero-section span {
+  display: block;
+}
+
+.hero-section__title {
+  font-size: 5rem;
+}
+
+.hero-section__sub-title {
+  font-size: 2rem;
+}
+
+
+
+
+/*------------------------------------*\
+ # WORK
+\*------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------*\
+ # SERVICES
+\*------------------------------------*/
+
+
+
+
+
+
+
 
 
 /*------------------------------------*\
@@ -263,21 +343,69 @@ p {
 /* Header, section text, img styling, grid CSS styling mobile first */
 
 .about-section {
-  border: 5px solid dodgerblue;
-  background-color: rgba(248, 213, 243, 0.534);
-  margin: 20px;
-  padding: 5px;
+  /* border: 5px solid dodgerblue; */
+  background-color: var(--section-about-bkg);
+  /* margin: 20px; */
+  /* padding: 5px; */
 }
 
-.people {
+.team {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team__member {
+  flex-grow: 1;
+  flex-basis: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team__member--img {
+  max-width: 80%;
+  border-radius: 50%;
+}
+
+.team__member--bio {
+  margin-top: 1rem;
+}
+
+/* .people {
   align-items: center;
   width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
   padding: 10px;
-}
+} */
 
+
+
+
+
+
+
+/*------------------------------------*\
+ # CONTACT
+\*------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------*\
+ # FOOTER
+\*------------------------------------*/
+
+.footer-section {
+  background-color: #000;
+  margin-bottom: 0;
+}
 
 
 
