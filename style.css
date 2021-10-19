@@ -197,18 +197,19 @@ h1 {
 
 .grid {
   display: grid;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
 
 .about-section, .work-section, 
 .services-section, .contact-section {
 border: 5px solid dodgerblue;
+background-color: rgba(248, 213, 243, 0.534);
 margin: 20px;
 padding: 5px;
-
 }
 
-h2, h3, h4, h5 {
+h2 {
   direction: ltr;
   text-align: center;
   margin: 0 auto;
@@ -228,16 +229,7 @@ p {
   color:rgb(133, 35, 35);
 }
 
-#Jessica {
-  align-items: center;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-#Ayo {
+.people {
   align-items: center;
   width: 100%;
   height: auto;
