@@ -30,24 +30,24 @@
 \*------------------------------------*/
 
 @font-face {
-    font-family: 'aileronbold';
-    src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'aileronbold';
+  src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'aileronbold';
-    src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'aileronbold';
+  src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'aileronbold';
-    src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'aileronbold';
+  src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -64,7 +64,7 @@
 
 
 /*------------------------------------*\
-  GENERIC
+GENERIC
 \*------------------------------------*/
 
 * {
@@ -75,7 +75,7 @@
 
 
 /*------------------------------------*\
-  BASE
+BASE
 \*------------------------------------*/
 
 body {
@@ -84,12 +84,45 @@ body {
   padding: 0;
 }
 
+h1 {
+  direction: ltr;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-size: 50px;
+  padding: 10px;
+  color: rgb(36, 26, 82);
+}
 
+h2 {
+  direction: ltr;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-size: 40px;
+  padding: 10px;
+  color: rgb(85, 70, 153);
+}
+
+
+p {
+  direction: ltr;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  color:rgb(133, 35, 35);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
 
 
 
 /*------------------------------------*\
-  #HEADER
+#HEADER
 \*------------------------------------*/
 
 
@@ -132,14 +165,14 @@ body {
 
 /* navigation ul element */
 .primary-nav__list {
-    margin: 0;
-    padding: 1rem 0;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    list-style-type: none;
-    text-align: center;
-  }
+  margin: 0;
+  padding: 1rem 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: center;
+}
 
 .primary-nav__list.active {
   display: flex;
@@ -222,6 +255,31 @@ body {
 
 
 
+/*------------------------------------*\
+ # ABOUT
+\*------------------------------------*/
+
+
+/* Header, section text, img styling, grid CSS styling mobile first */
+
+.about-section {
+  border: 5px solid dodgerblue;
+  background-color: rgba(248, 213, 243, 0.534);
+  margin: 20px;
+  padding: 5px;
+}
+
+.people {
+  align-items: center;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+
 
 
 
@@ -241,5 +299,3 @@ body {
 .width-sm {
   max-width: 20rem;
 }
-
-
