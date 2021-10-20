@@ -345,7 +345,7 @@ p {
   display: flex;
   flex-wrap: wrap;;
   gap: 1rem;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .logos__img {
@@ -450,7 +450,7 @@ form.form {
   border-radius: 2px;
 }
 
-.form__btn {
+.btn--form {
   width: 200px;
   background-color: #fff;
   margin-top: 2rem;
@@ -482,6 +482,7 @@ form.form {
 
 .footer-section p {
   text-align: center;
+  color: #b5b5b5;
 }
 
 
@@ -519,10 +520,10 @@ form.form {
   margin-top: 3rem;
 }
 
-.stack-md > * + *  {
+.stack-md > * + * {
   margin-top: 1.5rem; 
 }
 
-.stack-sm > * + *  {
+.stack-sm > * + * {
   margin-top: 0.5rem;
 }
