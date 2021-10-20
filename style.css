@@ -133,7 +133,7 @@ p {
   border: none;
   border-radius: 5px;
   text-transform: uppercase;
-  background-color: #F8D5F3;
+  background-color: #FFF;
   cursor: pointer;
   text-decoration: none;
   color: var(--color-heading-secondary);
