@@ -340,6 +340,19 @@ p {
   background-color: var(--section-work-bkg);
 }
 
+.logos {
+  padding-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.logos__img {
+  max-width: 100px;
+}
+
+
 
 
 
