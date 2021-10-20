@@ -29,7 +29,7 @@ This is a fictional Web Development Agency we built to practice Semantic HTML, C
 
 ## Tasks to Complete for Next Week
 
--[] 1. Visually display errors in contact form
--[] 2. Use `REM` with media queries on the root element to scale the website, proportionality and maintainability
--[] 3. Organise CSS Variables so they are all correctly matched with clear names
--[] 4. Continue to add content and check responsiveness and colour scheme for Colour blind users
+-[] Visually display errors in contact form
+-[] Use `REM` with media queries on the root element to scale the website, proportionality and maintainability
+-[] Organise CSS Variables so they are all correctly matched with clear names
+-[] Continue to add content and check responsiveness and colour scheme for Colour blind users
