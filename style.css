@@ -23,20 +23,9 @@
 
 
 
-
-
  /*------------------------------------*\
   SETTINGS
 \*------------------------------------*/
-
-
-
-@font-face {
-  font-family: 'aileron';
-  src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'aileron';
@@ -48,34 +37,30 @@
 @font-face {
   font-family: 'aileron';
   src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'aileron';
+  src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
 
 /* GLOBAL VARIABLES */
 
 :root {
 
   /* Colors */
-  --color-primary: #66C3FF;
-  --color-secondary: #363732;
-  --color-tertiary: rgba(248, 213, 243, 0.534);
+  --color-light-purple: #F8D5F3;
+  --color-light-grey: #b5b5b5;
+  --color-dark-blue: rgb(41, 40, 41);
 
-  /* sections backgrounds */
-  --section-hero-bkg: rgba(248, 213, 243, 0.534);
-  --section-work-bkg: #fff;
-  --section-services-bkg: #F8D5F3;
-  --section-about-bkg: #fff;
-  --section-contact-bkg:  rgb(41, 40, 41);
 
   /* font colors */
   --color-paragraph: #333;
-  --color-heading-primary: rgb(36, 26, 82);
-  --color-heading-secondary: rgb(36, 26, 82);
-
-  /* buttons text */
-  --color-btn-text: rgba(248, 213, 243, 0.534);
+  --color-headings: rgb(36, 26, 82);
 }
 
 
@@ -105,24 +90,24 @@ h1, h2, p {
   display: block;
   direction: ltr;
   text-align: center;
-  font-weight: 900;
   padding: 10px;
-  color: var(--color-heading-primary);
-  
+  color: var(--color-headings);
 }
 
 h1 {
   font-size: 3rem;
+  font-weight: 700;
   color: #fff;
 }
 
 h2 {
   font-size: 2rem;
+  font-weight: 600;
 }
-
 
 p {
   font-size: 1.2rem;
+  font-weight: 300;
   color:var(--color-paragraph);
   text-align: center;
 }
@@ -140,7 +125,7 @@ p {
   background-color: #FFF;
   cursor: pointer;
   text-decoration: none;
-  color: var(--color-heading-secondary);
+  color: var(--color-headings);
   transition: transform 0.2s linear;
 }
 
@@ -155,7 +140,7 @@ p {
   }
 
   h2 {
-    font-size: 3rem
+    font-size: 3rem;
   }
 
   .section {
@@ -247,7 +232,7 @@ p {
 
 .primary-nav__link:hover {
   text-decoration: underline;
-  color: #F8D5F3;
+  color: var(--color-light-purple);
 }
 
 .toggle-btn {
@@ -313,7 +298,7 @@ p {
 
 .hero-section {
   margin-top: 3rem;
-  background: url('assets/img/hero-img.jpg'), rgba(255, 255, 255);
+  background: url('assets/img/hero-img.jpg'), var(--color-headings);
   background-size: cover;
   background-position: center;
 }
@@ -339,10 +324,6 @@ p {
 /*------------------------------------*\
 # WORK
 \*------------------------------------*/
-
-.work-section {
-  background-color: var(--section-work-bkg);
-}
 
 .logos {
   padding-top: 3rem;
@@ -378,7 +359,7 @@ p {
 
 
 .services-section {
-  background-color: var(--section-services-bkg);
+  background-color: var(--color-light-purple);
 }
 
 .services-section p {
@@ -392,13 +373,6 @@ p {
 
 
 /* Header, section text, img styling, grid CSS styling mobile first */
-
-.about-section {
-  /* border: 5px solid dodgerblue; */
-  background-color: var(--section-about-bkg);
-  /* margin: 20px; */
-  /* padding: 5px; */
-}
 
 .team {
   display: flex;
@@ -416,7 +390,7 @@ p {
 }
 
 .member__img {
-  max-width: 80%;
+  max-width: 60%;
   border-radius: 50%;
 }
 
@@ -438,7 +412,7 @@ p {
 .contact-section {
   display: flex;
   flex-direction: column;
-  background-color: var(--section-contact-bkg);
+  background-color: var(--color-dark-blue);
   color: #fff;
 }
 
@@ -496,42 +470,31 @@ form.form {
 .footer-section {
   background-color: black;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .footer-section p {
-  text-align: center;
-  color: #b5b5b5;
+  color: var(--color-light-grey);
 }
 
-i.fa-linkedin {
-  font-family: 'FontAwesome';
-  content: 'f08c';
-  color: white;
-  font-style: normal;
-  font-weight: 900;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-}
-i.fa-twitter {
+i {
   font-family:'FontAwesome';
   content: 'f099';
   color:white;
-  font-style: normal;
-  font-weight: 900;
-  text-align: center;
   padding: 10px;
   font-size: 20px;
 }
+
+i.fa-linkedin {
+  content: 'f08c';
+}
+
+i.fa-twitter {
+  content: 'f099';
+}
+
 i.fa-facebook {
-  font-family: 'FontAwesome';
   content: 'f09a';
-  color: white;
-  font-style: normal;
-  font-weight: 900;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
 }
 
 
