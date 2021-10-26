@@ -9,8 +9,7 @@ const navigationBar = document.querySelector('.header-main');
 
 /* Function to close menu */
 function closeMenu() {
-  navigationMenu.classList.remove('active');
-  toggleBtn.classList.remove('active');
+  toggleBtn.setAttribute('aria-expanded', 'false');
 }
 
 
@@ -20,16 +19,10 @@ toggleBtn.addEventListener('click', (e) => {
 
   e.preventDefault();
 
-  // expands burger menu when clicked
-  toggleBtn.classList.toggle('active');
-  navigationMenu.classList.toggle('active');
-
-  // lets disabled users know the menu is either expanded or collapsed
-  if(toggleBtn.classList.contains('active')) {
-    toggleBtn.setAttribute('aria-expanded', 'true');
-  } else {
-    toggleBtn.setAttribute('aria-expanded', 'false');
-  }
+  // expands burger menu when clicked and lets disabled users know the menu is either expanded or collapsed
+  toggleBtn.getAttribute('aria-expanded') === 'false' ? 
+  toggleBtn.setAttribute('aria-expanded', 'true') :
+  toggleBtn.setAttribute('aria-expanded', 'false');
 
 })
 
