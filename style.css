@@ -28,21 +28,21 @@
 \*------------------------------------*/
 
 @font-face {
-  font-family: 'aileron';
+  font-family: 'aileron-bold';
   src: url('assets/fonts/Aileron-Light-webfont.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'aileron';
+  font-family: 'aileron-bold';
   src: url('assets/fonts/Aileron-SemiBold-webfont.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'aileron';
+  font-family: 'aileron-bold';
   src: url('assets/fonts/Aileron-Bold-webfont.woff') format('woff');
   font-weight: 700;
   font-style: normal;
@@ -57,11 +57,20 @@
   --color-light-grey: #b5b5b5;
   --color-dark-blue: rgb(41, 40, 41);
 
-
   /* font colors */
   --color-paragraph: #333;
   --color-headings: rgb(36, 26, 82);
 }
+
+@media (min-width: 960px) {
+  :root {
+    /* ↓ Upscale by 15% at 960px */
+    font-size: 115%;
+  }
+}
+
+
+
 
 
 /*------------------------------------*\
@@ -77,12 +86,16 @@ GENERIC
 
 
 
+
+
 /*------------------------------------*\
 BASE
 \*------------------------------------*/
 
 body {
   font-family: 'aileron-bold', 'Sans-Serif';
+  font-display: swap;
+  line-height: 1.4;
   text-align: left;
 }
 
@@ -90,14 +103,16 @@ h1, h2, p {
   display: block;
   direction: ltr;
   text-align: center;
-  padding: 10px;
+  padding: 0.5rem;
   color: var(--color-headings);
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 700;
+  line-height: 1;
   color: #fff;
+  text-shadow: 0.1px 0.1px 20px #000;
 }
 
 h2 {
@@ -118,36 +133,25 @@ p {
 
 .btn {
   width: 180px;
-  padding: 1.5rem 2rem;
+  font-size: 1em;
+  padding: 1.5em 1em;
   border: none;
   border-radius: 5px;
   text-transform: uppercase;
+  text-align: center;
   background-color: #FFF;
   cursor: pointer;
   text-decoration: none;
   color: var(--color-headings);
-  transition: transform 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .btn:hover {
   transform: scale(1.05);
+  box-shadow: 2px 2px 20px #000;
 }
 
-@media only screen and (min-width: 600px) {
 
-  h1 {
-    font-size: 5rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  .section {
-    padding: 6rem 1rem;
-  }
-
-}
 
 
 
@@ -185,15 +189,11 @@ p {
 
 .brand__name {
   padding: 6px 0 0 8px;
+  font-weight: 600;
 }
 
 .brand__img {
   width: 40px;
-}
-
-.calltoaction-btn {
-  display: block;
-  margin: 4rem auto;
 }
 
 /* container for all nav links */
@@ -212,7 +212,7 @@ p {
   text-align: center;
 }
 
-.primary-nav__list.active {
+[aria-expanded='true'] ~ .primary-nav__links .primary-nav__list  {
   display: flex;
 }
 
@@ -242,11 +242,13 @@ p {
   top: 1.5rem;
   right: 0.8rem;
   display: flex;
+  background-color: #000;
+  border: none;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.toggle-btn.active {
+[aria-expanded='true'].toggle-btn {
   justify-content: space-between;
 }
 
@@ -266,6 +268,7 @@ p {
     display: none;
   }
 
+  /* nav element */
   .primary-nav {
     flex-direction: row;
     align-items: center;
@@ -292,12 +295,18 @@ p {
 }
 
 
+
+
+
 /*------------------------------------*\
  # HERO
 \*------------------------------------*/
 
 .hero-section {
   margin-top: 3rem;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
   background: url('assets/img/hero-img.jpg'), var(--color-headings);
   background-size: cover;
   background-position: center;
@@ -308,16 +317,16 @@ p {
 }
 
 .hero-section__sub-title {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  padding: 2rem 0;
 }
 
-@media only screen and (min-width: 600px) {
-
-  .hero-section__sub-title {
-    font-size: 2rem;
-  }
-
+.calltoaction-btn {
+  display: block;
+  margin: 0 auto;
 }
+
+
 
 
 
@@ -340,14 +349,24 @@ p {
 .photos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-.photos__img {
-  width: 100%;
-  height: auto;
-  padding: 1em;
+  justify-content: space-evenly;
+  gap: 1rem;
 }
 
+.photos__img {
+  max-height: 10rem;
+  max-width: 100%;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+  .photos__img {
+    max-height: 20rem;
+    max-width: 100%;
+  }
+
+}
 
 
 
@@ -360,9 +379,6 @@ p {
 
 .services-section {
   background-color: var(--color-light-purple);
-  height: 100vh;
-  width: 100%;
-  margin-bottom: 0;
   text-align: center;
 }
 
@@ -373,8 +389,8 @@ p {
 .services-logo {
   font-family: 'FontAwesome';
   color: black;
-  padding: 10px;
-  font-size: 20px;
+  padding: 0.6rem;
+  font-size: 2.5rem;
 }
 
 i.fa-print {
@@ -402,6 +418,9 @@ i.fa-drafting-compass {
 }
 
 
+
+
+
 /*------------------------------------*\
 # ABOUT
 \*------------------------------------*/
@@ -427,13 +446,13 @@ i.fa-drafting-compass {
 .member__img {
   max-width: 60%;
   border-radius: 50%;
+  padding: 2.5em 0 0.8em 0;
 }
 
 .member__bio {
   margin-top: 1rem;
-  font-size: 15px;
+  font-size: 1.1rem;
 }
-
 
 
 
@@ -481,6 +500,10 @@ form.form {
   width: 200px;
   background-color: #fff;
   margin-top: 2rem;
+}
+
+.btn--form:hover {
+  box-shadow: 0.5px 0.5px 10px #fff;
 }
 
 /* name and lastname group */
@@ -536,6 +559,9 @@ i.fa-instagram {
 }
 
 
+
+
+
 /*------------------------------------*\
   MODIFIER CLASSES
 \*------------------------------------*/
@@ -568,7 +594,7 @@ i.fa-instagram {
 }
 
 .stack-md > * + * {
-  margin-top: 1.5rem; 
+  margin-top: 1.2rem; 
 }
 
 .stack-sm > * + * {
